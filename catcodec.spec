@@ -1,5 +1,5 @@
 Name:           catcodec
-Version:        1.0.0
+Version:        1.0.1
 Release:        %mkrel 1
 Summary:        Sample catalog decoder and encoder for OpenTTD
 Group:          Development/Other
@@ -17,22 +17,20 @@ and raw PCM data.
 %setup -q
 
 %build
-%make CFLAGS="%{optflags}"
+export CXXFLAGS="%{optflags}"
+export LDFLAGS="%{ldflags}"
+
+%make
 
 %install
 rm -rf %{buildroot}
-
-# binary
-install -D -m 755 catcodec %{buildroot}%{_bindir}/catcodec
-
-# man page
-install -D -m 755 catcodec.1 %{buildroot}%{_mandir}/man1/catcodec.1
+%makeinstall_std
 
 %clean
 rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%doc README
+%doc bundle/*.txt
 %{_bindir}/*
 %{_mandir}/man1/%{name}*
