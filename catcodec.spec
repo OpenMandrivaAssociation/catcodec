@@ -1,13 +1,12 @@
-Name:           catcodec
-Version:        1.0.4
-Release:        %mkrel 1
-Summary:        Sample catalog decoder and encoder for OpenTTD
-Group:          Development/Other
-License:        GPLv2+
-URL:            http://www.openttd.org/en/download-catcodec
-Source0:        http://binaries.openttd.org/extra/%{name}/%{version}/%{name}-%{version}-source.tar.xz
-Patch0:		catcodec-1.0.2-fix_linking_order.patch 
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
+Name:		catcodec
+Version:	1.0.5
+Release:	1
+Summary:	Sample catalog decoder and encoder for OpenTTD
+Group:		Development/Other
+License:	GPLv2+
+URL:		http://www.openttd.org/en/download-catcodec
+Source0:	http://binaries.openttd.org/extra/%{name}/%{version}/%{name}-%{version}-source.tar.xz
+Patch0:		catcodec-1.0.2-fix_linking_order.patch
 
 %description
 catcodec decodes and encodes sample catalogs for OpenTTD. These sample
@@ -29,17 +28,13 @@ DO_NOT_INSTALL_LICENSE=1
 DO_NOT_INSTALL_CHANGELOG=1
 EOF
 
-%make
+%make VERBOSE=1
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root,-)
 %doc docs/readme.txt
 %{_bindir}/*
 %{_mandir}/man1/%{name}*
+
