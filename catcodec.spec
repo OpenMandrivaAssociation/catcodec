@@ -1,6 +1,6 @@
 Name:		catcodec
 Version:	1.0.5
-Release:	3
+Release:	4
 Summary:	Sample catalog decoder and encoder for OpenTTD
 Group:		Development/Other
 License:	GPLv2+
