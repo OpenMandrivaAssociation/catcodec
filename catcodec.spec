@@ -4,8 +4,8 @@ Release:	4
 Summary:	Sample catalog decoder and encoder for OpenTTD
 Group:		Development/Other
 License:	GPLv2+
-URL:		http://www.openttd.org/en/download-catcodec
-Source0:	http://binaries.openttd.org/extra/%{name}/%{version}/%{name}-%{version}-source.tar.xz
+URL:		https://cdn.openttd.org/catcodec-releases
+Source0:	https://cdn.openttd.org/catcodec-releases/%{version}/catcodec-%{version}-source.tar.xz
 Patch0:		catcodec-1.0.2-fix_linking_order.patch
 
 %description
